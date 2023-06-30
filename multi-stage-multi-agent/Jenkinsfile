@@ -17,5 +17,9 @@ pipeline {
         sh 'node --version'
       }
     }
-  }
-}
+    stage('database') {
+      agent {
+        docker { image 'mtsql:latest' }
+      }
+      steps {
+        sh 'node --version'SELECT * FROM XYZ'
